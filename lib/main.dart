@@ -43,11 +43,21 @@ class Cuisine extends StatelessWidget {
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                   Text("gauche"),
-                   Text("droite"),
+                  Text("gauche"),
+                  Text("droite"),
                 ],
               ),
             ),
+              Container(
+                height: 200,
+                width: 250,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: Image.asset("images/p2.jpg").image,
+                        fit: BoxFit.cover
+                    ),
+                ),
+              )
           ],
         ),
       ),
