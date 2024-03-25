@@ -34,9 +34,9 @@ class Cuisine extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("Ceci est un premier texte"),
             const Text("Ceci est le titre"),
-            const Text("3 eme texte"),
+            const Text("Ceci est un premier texte"),
+            const Text("2 eme texte"),
             Container(
               color: Colors.deepPurpleAccent,
               padding: const EdgeInsets.fromLTRB(2, 5, 2, 5),
@@ -48,16 +48,16 @@ class Cuisine extends StatelessWidget {
                 ],
               ),
             ),
-              Container(
-                height: 200,
-                width: 250,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: Image.asset("images/p2.jpg").image,
-                        fit: BoxFit.cover
-                    ),
-                ),
-              )
+            Container(
+              height: 200,
+              width: 250,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: Image.asset("images/p2.jpg").image,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.topCenter),
+              ),
+            ),
           ],
         ),
       ),
