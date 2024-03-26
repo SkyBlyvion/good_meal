@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:good_meal/models/MakeItResponsive.dart';
-import 'package:good_meal/sections/EventSection.dart';
-import 'package:good_meal/sections/TopStack.dart';
 import 'package:good_meal/widgets/PhoneBar.dart';
 import 'package:good_meal/widgets/WebBar.dart';
-
 import '../widgets/DrawerSmall.dart';
 
 //statefull car besoin de cycle de vie et dynamisne au sein de la page
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class NextPage extends StatefulWidget {
+  const NextPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<NextPage> createState() => _NextPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _NextPageState extends State<NextPage> {
   @override
   Widget build(BuildContext context) {
     // declarer variable size qui va recuperer la taille du contexte
@@ -32,8 +29,6 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TopStack(),
-            EventSection(),
             Placeholder(),
           ],
         ),

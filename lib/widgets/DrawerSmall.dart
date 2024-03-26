@@ -17,7 +17,9 @@ class DrawerSmall extends StatelessWidget {
               ButtonObject button = menuButton[index - 1]; // index 0 = branding index 1 =
               return ListTile(
                 title: Text(button.label ?? ""),
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => button.destination));
+                },
               );
             }
           },

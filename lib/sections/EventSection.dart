@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:good_meal/models/Constantes.dart';
 import 'package:good_meal/models/MakeItResponsive.dart';
+import '../widgets/EventWidget.dart';
 import '../widgets/TitleText.dart';
 
 class EventSection extends StatelessWidget {
@@ -34,6 +36,7 @@ class EventSection extends StatelessWidget {
     );
   }
   Widget  adaptedToSize(bool small, Size size){
-    
+    List<Widget> widgets = events.map((ev) => EventWidget(size: size, event: ev)).toList();
+    return (small) ? Column(children: widgets,) : Container(height: size.height + 80 ,child: ListView(scrollDirection: Axis.horizontal, children: widgets));
   }
 }

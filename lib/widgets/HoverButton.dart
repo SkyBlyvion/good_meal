@@ -21,7 +21,11 @@ class _HoverButtonState extends State<HoverButton> {
           hoverValue = hover;
         });
       },
-      onTap: () {},
+      onTap: () { // action du click
+        Navigator.push(context, MaterialPageRoute(builder: (context){
+          return widget.button.destination;
+        }));
+      },
       child: Padding(
         padding: EdgeInsets.only(left: 8, right: 8),
         child: Column(

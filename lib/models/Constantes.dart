@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:good_meal/models/ButtonObject.dart';
+import 'package:good_meal/models/Event.dart';
 import 'package:good_meal/pages/HomePage.dart';
+import 'package:good_meal/pages/NextPage.dart';
 
 import '../widgets/HoverButton.dart';
 
@@ -24,7 +26,7 @@ String p12 = "images/p12.jpg";
 // gestion des boutons des menus
 List<ButtonObject> menuButton = [
   ButtonObject(destination: HomePage(), label: "Ma cuisine"),
-  ButtonObject(destination: HomePage(), label: "Mes recettes"),
+  ButtonObject(destination: NextPage(), label: "Mes recettes"),
   ButtonObject(destination: HomePage(), label: "Blog"),
 ];
 
@@ -43,7 +45,11 @@ List<HoverButton> getCardHoverButton() =>
 List<FloatingActionButton> getFloating(BuildContext context) =>
     containerButton.map((button) =>
         FloatingActionButton(
-          onPressed: (){},
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return button.destination;
+            }));
+          },
             backgroundColor: appBarColor,
             heroTag: button.label,
             child: button.icon,
@@ -56,3 +62,10 @@ List<HoverButton> getMenuButton() => menuButton.map(
 ).toList();
 
 // tableau events
+List<Event> events = [
+  Event(name: "Groinfre 1", path: p3 ),
+  Event(name: "Groinfre 2", path: p4 ),
+  Event(name: "Groinfre 3", path: p5 ),
+  Event(name: "Groinfre 4", path: p6 ),
+  Event(name: "Groinfre 5", path: p7 ),
+];
