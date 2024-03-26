@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:good_meal/models/MakeItResponsive.dart';
+import 'package:good_meal/sections/TopStack.dart';
 import 'package:good_meal/widgets/PhoneBar.dart';
 import 'package:good_meal/widgets/WebBar.dart';
 
@@ -21,12 +22,19 @@ class _HomePageState extends State<HomePage> {
     ScreenSize screenSize = MakeItResponsive().getScreenSize(context);
     print(size.width);
     print(screenSize);
-    // je remplace le placeholder par uns caffold et appbar
+    // je remplace le placeholder par un scaffold et appbar
     return Scaffold(
       appBar: (screenSize == ScreenSize.small)
           ? PhoneBar()
           : WebBar(size: size),
-      body: const Placeholder(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            TopStack(),
+            Placeholder(),
+          ],
+        ),
+      ),
     );
   }
 }

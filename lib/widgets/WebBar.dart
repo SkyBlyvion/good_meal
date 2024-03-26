@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:good_meal/models/Constantes.dart';
 import 'package:good_meal/widgets/Branding.dart';
 
 class WebBar extends PreferredSize {
@@ -11,7 +12,7 @@ class WebBar extends PreferredSize {
     preferredSize: Size((size.width), (size.height / 3)),
     child: Container(
       padding: EdgeInsets.all(10),
-      color: Colors.lightBlueAccent,
+      color: appBarColor,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

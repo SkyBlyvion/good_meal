@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:good_meal/models/Constantes.dart';
 import 'package:good_meal/widgets/Branding.dart';
 
 class PhoneBar extends AppBar{
@@ -6,6 +7,6 @@ class PhoneBar extends AppBar{
   PhoneBar(): super(
     title: Branding(),
     centerTitle: true,
-    backgroundColor: Colors.lightBlue,
+    backgroundColor: appBarColor,
   );
 }
