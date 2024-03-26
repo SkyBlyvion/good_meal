@@ -20,14 +20,10 @@ class WebBar extends PreferredSize {
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('lien1'),
-                Text('lien2'),
-                Text('lien3'),
-              ],
+              children: getMenuButton(),
             ),
           ),
-          Text('login')
+          Text('Login')
         ]
       ),
     )

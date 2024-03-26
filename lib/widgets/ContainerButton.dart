@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:good_meal/models/Constantes.dart';
 import 'package:good_meal/models/MakeItResponsive.dart';
 
 class ContainerButton extends StatelessWidget {
@@ -23,12 +24,26 @@ class ContainerButton extends StatelessWidget {
   // widget interne a notre container button
   //widget pour telephone
   Widget small(BuildContext context){
-    return Placeholder();
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: getFloating(context),
+    );
   }
 
   // widget pour le web
   Widget big(){
-    return Placeholder();
+    return Container(
+      height: 40,
+      child: Card(
+        elevation: 8,
+        color: Colors.blue,
+        child: Row( // la lambda de constantes remplace le tableau, celui ci a une liste
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: getCardHoverButton(),
+        ),
+      ),
+
+    );
   }
 
 }
