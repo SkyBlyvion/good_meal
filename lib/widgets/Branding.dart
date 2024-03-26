@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:good_meal/models/Constantes.dart';
 
 class Branding extends StatelessWidget {
-  const Branding({super.key});
+  double? fontTitleSize;
+  Branding({this.fontTitleSize});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class Branding extends StatelessWidget {
           style: TextStyle(
             color: brandingColor,
             fontWeight: FontWeight.w900,
-            fontSize: 30,
+            fontSize: fontTitleSize ?? 30,
             fontStyle: FontStyle.italic,
           ),
         )

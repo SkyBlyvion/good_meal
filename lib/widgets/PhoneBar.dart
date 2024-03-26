@@ -5,7 +5,7 @@ import 'package:good_meal/widgets/Branding.dart';
 class PhoneBar extends AppBar{
   // constructeur
   PhoneBar(): super(
-    title: Branding(),
+    title: Branding(fontTitleSize: 25,),
     centerTitle: true,
     backgroundColor: appBarColor,
   );

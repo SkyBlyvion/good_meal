@@ -4,6 +4,8 @@ import 'package:good_meal/sections/TopStack.dart';
 import 'package:good_meal/widgets/PhoneBar.dart';
 import 'package:good_meal/widgets/WebBar.dart';
 
+import '../widgets/DrawerSmall.dart';
+
 //statefull car besoin de cycle de vie et dynamisne au sein de la page
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,9 +26,8 @@ class _HomePageState extends State<HomePage> {
     print(screenSize);
     // je remplace le placeholder par un scaffold et appbar
     return Scaffold(
-      appBar: (screenSize == ScreenSize.small)
-          ? PhoneBar()
-          : WebBar(size: size),
+      appBar: (screenSize == ScreenSize.small) ? PhoneBar() : WebBar(size: size),
+      drawer: DrawerSmall(), // composant de menu pour tel
       body: SingleChildScrollView(
         child: Column(
           children: [
