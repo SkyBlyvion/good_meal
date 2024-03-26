@@ -10,7 +10,7 @@ class Branding extends StatelessWidget {
       children: [
         Image.asset(p1, width: 40, height: 40,),
         Text(
-          "La cuisine des Devs",
+          "La cuisine des Dieux",
           style: TextStyle(
             color: brandingColor,
             fontWeight: FontWeight.w900,
