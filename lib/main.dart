@@ -1,10 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'pages/HomePage.dart';
+
 /* composants stateles and statefull*/
 /* composants entrée stateless */
 void main() {
   runApp(const Cuisine());
+}
+
+class Cuisine extends StatelessWidget {
+  const Cuisine({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Mon site de cuisine",
+      // je crée un composant homepage stocké dans mon dossier pages
+      home: HomePage(),
+    );
+  }
 }
 
 /* stless + tab */
