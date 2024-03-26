@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:good_meal/models/MakeItResponsive.dart';
+import 'package:good_meal/widgets/PhoneBar.dart';
+import 'package:good_meal/widgets/WebBar.dart';
 
 //statefull car besoin de cycle de vie et dynamisne au sein de la page
 class HomePage extends StatefulWidget {
@@ -21,7 +23,9 @@ class _HomePageState extends State<HomePage> {
     print(screenSize);
     // je remplace le placeholder par uns caffold et appbar
     return Scaffold(
-      appBar: AppBar(title: const Text('test')),
+      appBar: (screenSize == ScreenSize.small)
+          ? PhoneBar()
+          : WebBar(size: size),
       body: const Placeholder(),
     );
   }
