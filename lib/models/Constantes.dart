@@ -1,13 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:good_meal/models/ButtonObject.dart';
 import 'package:good_meal/models/Event.dart';
 import 'package:good_meal/pages/HomePage.dart';
 import 'package:good_meal/pages/NextPage.dart';
 import 'package:good_meal/widgets/UrlButton.dart';
-
 import '../widgets/HoverButton.dart';
-import 'CarouselImage.dart';
-import 'UrlClass.dart';
+import 'package:good_meal/models/CarouselImage.dart';
+import 'package:good_meal/models/UrlClass.dart';
+import 'package:crypto/crypto.dart';
 
 // définition des couleurs
 Color appBarColor = const Color.fromRGBO(3, 169, 244, 1);
@@ -66,11 +68,11 @@ List<HoverButton> getMenuButton() => menuButton.map(
 
 // tableau events
 List<Event> events = [
-  Event(name: "Groinfre 1", path: p3 ),
-  Event(name: "Groinfre 2", path: p4 ),
-  Event(name: "Groinfre 3", path: p5 ),
-  Event(name: "Groinfre 4", path: p6 ),
-  Event(name: "Groinfre 5", path: p7 ),
+  Event(name: "Barbas", path: p3 ),
+  Event(name: "Bran", path: p4 ),
+  Event(name: "CuSith", path: p5 ),
+  Event(name: "Vigilance", path: p6 ),
+  Event(name: "Ysgramor", path: p7 ),
 ];
 
 List<UrlClass> networks = [
@@ -91,3 +93,11 @@ List<CarouselImage> cimages = [
   CarouselImage(name: "Aramis", path: p3),
   CarouselImage(name: "Dragonborn", path: p12),
 ];
+
+// information de connexion
+String adminlog = "admin";
+String adminpass = generateMd5("admin");
+// fonction de hash en md5
+String generateMd5(String data){
+  return md5.convert(utf8.encode(data)).toString();
+}

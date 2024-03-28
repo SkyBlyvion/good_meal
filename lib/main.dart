@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:good_meal/pages/LoginPage.dart';
 
 import 'pages/HomePage.dart';
 
@@ -17,7 +18,7 @@ class Cuisine extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Mon site de cuisine",
       // je crée un composant homepage stocké dans mon dossier pages
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
