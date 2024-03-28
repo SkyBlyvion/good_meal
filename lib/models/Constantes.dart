@@ -5,6 +5,7 @@ import 'package:good_meal/pages/HomePage.dart';
 import 'package:good_meal/pages/NextPage.dart';
 
 import '../widgets/HoverButton.dart';
+import 'UrlClass.dart';
 
 // définition des couleurs
 Color appBarColor = const Color.fromRGBO(3, 169, 244, 1);
@@ -68,4 +69,11 @@ List<Event> events = [
   Event(name: "Groinfre 3", path: p5 ),
   Event(name: "Groinfre 4", path: p6 ),
   Event(name: "Groinfre 5", path: p7 ),
+];
+
+List<UrlClass> networks = [
+  UrlClass(name: "Facebook", url: "https.//www.facebook.com"),
+  UrlClass(name: "Instagram", url: "https.//www.instagram.com"),
+  UrlClass(name: "Twitter", url: "https.//www.twitter.com"),
+
 ];

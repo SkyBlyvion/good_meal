@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:good_meal/models/MakeItResponsive.dart';
+import 'package:good_meal/sections/ContactSection.dart';
 import 'package:good_meal/widgets/PhoneBar.dart';
 import 'package:good_meal/widgets/WebBar.dart';
 import '../widgets/DrawerSmall.dart';
@@ -29,6 +30,11 @@ class _NextPageState extends State<NextPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Container(
+              height: 150,
+              child: Placeholder(),
+            ),
+            ContactSection(),
             Placeholder(),
           ],
         ),
