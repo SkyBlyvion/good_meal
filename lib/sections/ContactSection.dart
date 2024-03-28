@@ -25,13 +25,13 @@ class ContactSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column( // la premiere colone
-                children: [
-
-                ],
+                children: social(),
               ),
               Column( // la deuxiéme colone
                 children: [
                   Text("Contactez-nous !"),
+                  TextButton(onPressed: (){}, child: Text("06.06.06.06.06")),
+                  TextButton(onPressed: (){}, child: Text("email: cfa@lidem.com")),
                 ],
               ),
             ],
@@ -39,5 +39,11 @@ class ContactSection extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  List<Widget> social(){
+    List<Widget> items = [Text("Social Network")];
+    items.addAll(getSocialButton());
+    return items;
   }
 }

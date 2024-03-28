@@ -3,6 +3,7 @@ import 'package:good_meal/models/ButtonObject.dart';
 import 'package:good_meal/models/Event.dart';
 import 'package:good_meal/pages/HomePage.dart';
 import 'package:good_meal/pages/NextPage.dart';
+import 'package:good_meal/widgets/UrlButton.dart';
 
 import '../widgets/HoverButton.dart';
 import 'UrlClass.dart';
@@ -75,5 +76,7 @@ List<UrlClass> networks = [
   UrlClass(name: "Facebook", url: "https.//www.facebook.com"),
   UrlClass(name: "Instagram", url: "https.//www.instagram.com"),
   UrlClass(name: "Twitter", url: "https.//www.twitter.com"),
-
 ];
+
+List<UrlButton> getSocialButton() =>
+    networks.map((net) => UrlButton(urlClass: net)).toList();
