@@ -6,6 +6,7 @@ import 'package:good_meal/models/Event.dart';
 import 'package:good_meal/pages/HomePage.dart';
 import 'package:good_meal/pages/NextPage.dart';
 import 'package:good_meal/widgets/UrlButton.dart';
+import '../pages/GibliPage.dart';
 import '../widgets/HoverButton.dart';
 import 'package:good_meal/models/CarouselImage.dart';
 import 'package:good_meal/models/UrlClass.dart';
@@ -33,6 +34,7 @@ List<ButtonObject> menuButton = [
   ButtonObject(destination: HomePage(), label: "Ma cuisine"),
   ButtonObject(destination: NextPage(), label: "Mes recettes"),
   ButtonObject(destination: HomePage(), label: "Blog"),
+  ButtonObject(destination: GibliPage(), label: "Gibli"),
 ];
 
 // gestion des boutons du topstack

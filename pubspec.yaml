@@ -45,6 +45,9 @@ dependencies:
   # package de cryptage
   crypto: ^3.0.2
 
+  # package Http
+  http: ^1.2.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
