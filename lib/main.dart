@@ -16,8 +16,9 @@ class Cuisine extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Mon site de cuisine",
+      title: "Awesome Flutter Project",
       // je crée un composant homepage stocké dans mon dossier pages
+      // je le remplace par LoginPage() du dossier pages
       home: LoginPage(),
     );
   }

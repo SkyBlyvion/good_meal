@@ -96,7 +96,7 @@ List<CarouselImage> cimages = [
 
 // information de connexion
 String adminlog = "admin";
-String adminpass = generateMd5("admin");
+String adminpass = generateMd5("admin@24");
 // fonction de hash en md5
 String generateMd5(String data){
   return md5.convert(utf8.encode(data)).toString();
