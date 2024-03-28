@@ -6,6 +6,7 @@ import 'package:good_meal/pages/NextPage.dart';
 import 'package:good_meal/widgets/UrlButton.dart';
 
 import '../widgets/HoverButton.dart';
+import 'CarouselImage.dart';
 import 'UrlClass.dart';
 
 // définition des couleurs
@@ -80,3 +81,13 @@ List<UrlClass> networks = [
 
 List<UrlButton> getSocialButton() =>
     networks.map((net) => UrlButton(urlClass: net)).toList();
+
+List<CarouselImage> cimages = [
+  CarouselImage(name: "Toto", path: p6),
+  CarouselImage(name: "Zeus", path: p7),
+  CarouselImage(name: "Hera", path: p8),
+  CarouselImage(name: "Athos", path: p9),
+  CarouselImage(name: "Portos", path: p10),
+  CarouselImage(name: "Aramis", path: p3),
+  CarouselImage(name: "Dragonborn", path: p12),
+];

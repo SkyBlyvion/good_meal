@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:good_meal/models/MakeItResponsive.dart';
+import 'package:good_meal/sections/CarouselSection.dart';
 import 'package:good_meal/sections/ContactSection.dart';
 import 'package:good_meal/widgets/PhoneBar.dart';
 import 'package:good_meal/widgets/WebBar.dart';
@@ -30,10 +31,11 @@ class _NextPageState extends State<NextPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: 150,
-              child: Placeholder(),
-            ),
+            CarouselSection(depthIndex: 3,),
+            //Container(
+            //  height: 150,
+            //  child: Placeholder(),
+            // ),
             ContactSection(),
             Placeholder(),
           ],
