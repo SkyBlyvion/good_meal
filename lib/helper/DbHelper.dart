@@ -7,6 +7,8 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../models/Utilisateur.dart';
+
 class DbHelper {
   // private builder, builder injection when class called
   // private  == static
@@ -36,7 +38,7 @@ class DbHelper {
     // we are creating the path + specify the name
     String path = join(documentsDirectory.path, DB_NAME);
     // print for finding the path in console
-    print (path);
+    print (path); // /data/user/0/com.skyblyvion.good_meal/app_flutter/recette.db
     // create the db function
     Database db = await openDatabase(path, version: 1, onCreate: _onCreate);
     // return the created db
@@ -67,6 +69,26 @@ class DbHelper {
       print(e);
     }
     print('db was created');
+  }
+
+  Future<int> insertUser(Utilisateur user) async {
+    Database? db = await DbHelper.instance.db;
+    return await db!.insert(TABLEUSER, user.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.abort);
+  }
+
+  Future<List<Utilisateur>> getUsers() async {
+    Database? db = await DbHelper.instance.db;
+    List<Map<String, dynamic>> maps = await db!.query(TABLEUSER, orderBy: 'nom');
+    return List.generate(maps.length, (i) {
+      return Utilisateur(
+          id: maps[i]['id'],
+          nom: maps[i]['nom'],
+          prenom: maps[i]['prenom'],
+          login: maps[i]['login'],
+          pass: maps[i]['pass']);
+    });
+
   }
 
 }
