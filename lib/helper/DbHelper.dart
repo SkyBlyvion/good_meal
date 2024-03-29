@@ -88,7 +88,22 @@ class DbHelper {
           login: maps[i]['login'],
           pass: maps[i]['pass']);
     });
-
   }
+
+  Future<int> insertRecette(Recette recette) async { // insertion d'une recette
+    Database? db = await DbHelper.instance.db;
+    return await db!.insert(TABLERECETTE, recette.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.abort);
+  }
+
+  Future<List<Recette>> getRecettes() async {
+    Database? db = await DbHelper.instance.db;
+    List<Map<String, dynamic>> maps = await db!.query(TABLERECETTE, orderBy: 'id');
+    return List.generate(maps.length, (index) => Recette.fromMap(maps[index]));{
+    });
+  }
+
+
+
 
 }
