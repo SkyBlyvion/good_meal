@@ -7,6 +7,7 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../models/Recette.dart';
 import '../models/Utilisateur.dart';
 
 class DbHelper {
@@ -99,7 +100,7 @@ class DbHelper {
   Future<List<Recette>> getRecettes() async {
     Database? db = await DbHelper.instance.db;
     List<Map<String, dynamic>> maps = await db!.query(TABLERECETTE, orderBy: 'id');
-    return List.generate(maps.length, (index) => Recette.fromMap(maps[index]));{
+    return List.generate(maps.length, (index) => Recette.fromMap(maps[index]));
     });
   }
 
