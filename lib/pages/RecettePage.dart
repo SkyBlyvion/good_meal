@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:good_meal/models/Constantes.dart';
 import 'package:good_meal/models/MakeItResponsive.dart';
-import 'package:good_meal/sections/CarouselSection.dart';
-import 'package:good_meal/sections/ContactSection.dart';
 import 'package:good_meal/widgets/PhoneBar.dart';
 import 'package:good_meal/widgets/WebBar.dart';
 import '../helper/DbHelper.dart';
@@ -39,6 +36,14 @@ class _RecettePageState extends State<RecettePage> {
       Utilisateur usertest = Utilisateur(nom: 'toto', prenom: 'toto', login: 'toto.toto', pass: generateMd5('toto@24'));
       await DbHelper.instance.insertUser(usertest);
     }
+    setState(() {
+      users = users;
+    });
+  }
+
+  // méthode pour rafraichir
+  Future refresh() async {
+    users = await DbHelper.instance.getUsers();
     setState(() {
       users = users;
     });
@@ -102,6 +107,8 @@ class _RecettePageState extends State<RecettePage> {
                             prenom: prenomController.text,
                             login: nomController.text + "." + prenomController.text,
                             pass: generateMd5(passController.text));
+                          DbHelper.instance.insertUser(newuser);
+                          refresh();
                         }, child: Text("enregistrer"),),
                       ],
                     )
