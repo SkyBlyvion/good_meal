@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:good_meal/models/Constantes.dart';
 import 'package:good_meal/models/MakeItResponsive.dart';
@@ -20,6 +21,10 @@ class RecettePage extends StatefulWidget {
 class _RecettePageState extends State<RecettePage> {
 
   List<Utilisateur> users = [];
+  final TextEditingController nomController = TextEditingController();
+  final TextEditingController prenomController = TextEditingController();
+  final TextEditingController passController = TextEditingController();
+
   @override
   void initState() {
     // TODO: implement initState
@@ -30,7 +35,7 @@ class _RecettePageState extends State<RecettePage> {
   Future initialize() async {
     users = await DbHelper.instance.getUsers();
     if(users.isEmpty){
-      // print("la table est vide");
+      print("la table est vide");
       Utilisateur usertest = Utilisateur(nom: 'toto', prenom: 'toto', login: 'toto.toto', pass: generateMd5('toto@24'));
       await DbHelper.instance.insertUser(usertest);
     }
@@ -55,20 +60,72 @@ class _RecettePageState extends State<RecettePage> {
       drawer: DrawerSmall(), // composant de menu pour tel
       body: SingleChildScrollView(
         child: Column(
-          children: users.map((user) => Card(
-            child: Column(
+          children: [
+            Column(
               children: [
-                Row(
+                Text("ajouter un user"),
+                Column(
                   children: [
-                    Text(user.nom),
-                    Text(user.prenom),
+                    TextFormField(
+                      controller: nomController,
+                      decoration: InputDecoration(
+                        labelText: "Nom",
+                        border: OutlineInputBorder(),
+                      ),
+                    ), // fiel nom
+                    SizedBox(height: 10,),
+                    TextFormField(
+                      controller: prenomController,
+                      decoration: InputDecoration(
+                          labelText: "Prenom",
+                          border: OutlineInputBorder(),
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                    // field prenom
+                    TextFormField(
+                      controller: passController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          labelText: "Password",
+                          border: OutlineInputBorder(),
+                      ),
+                    ), // field pass
+                    SizedBox(height: 10,),
+                    Row(
+                      children: [
+                        InkWell(onTap: () {}, child: Text("annuler"),), //button
+                        SizedBox(width: 10,),
+                        InkWell(onTap: (){
+                          Utilisateur newuser = Utilisateur(
+                            nom: nomController.text,
+                            prenom: prenomController.text,
+                            login: nomController.text + "." + prenomController.text,
+                            pass: generateMd5(passController.text));
+                        }, child: Text("enregistrer"),),
+                      ],
+                    )
                   ],
-                ),
-                Text(user.login),
-                Text(user.pass)
+                )
               ],
             ),
-          )).toList()
+            Column(
+              children: users.map((user) => Card(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(user.nom),
+                        Text(user.prenom),
+                      ],
+                    ),
+                    Text(user.login),
+                    Text(user.pass)
+                  ],
+                ),
+              )).toList()
+            ),
+          ],
         ),
       ),
     );
