@@ -21,7 +21,7 @@ class HttpHelper {
       final responseBody =
           jsonDecode(result.body).cast<Map<String, dynamic>>(); // force hash
       List<Movie> movies =
-          responseBody.map<Movie>((item) => Movie.fromJson(item)).toList(); // store in list the object from hash
+          responseBody.map<Movie>((item) => Movie.fromJson(item)).toList(); // store in list the hashed object
       return movies;
     } else {
       return null; // return null or [] if null add ?

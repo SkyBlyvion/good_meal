@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:good_meal/helper/HttpHelper.dart';
 import 'package:good_meal/models/Constantes.dart';
 import 'package:good_meal/models/MakeItResponsive.dart';
-import 'package:good_meal/sections/CarouselSection.dart';
-import 'package:good_meal/sections/ContactSection.dart';
 import 'package:good_meal/widgets/PhoneBar.dart';
 import 'package:good_meal/widgets/WebBar.dart';
 import '../models/Movie.dart';
@@ -60,7 +58,7 @@ class _GibliPageState extends State<GibliPage> {
             child: ListTile(
               title: Text(movie.title),
               subtitle: Text(movie.description),
-              leading: Image.network(movie.image, width: 200,),
+              leading: Image.network(movie.image, width: 100,),
             ),
           );
         },

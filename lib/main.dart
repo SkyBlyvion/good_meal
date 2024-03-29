@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:good_meal/pages/LoginPage.dart';
 
+import 'helper/DbHelper.dart';
 import 'pages/HomePage.dart';
 
 /* composants stateles and statefull*/
 /* composants entrée stateless */
-void main() {
+void main() async {
+  // call DbHelper
+  WidgetsFlutterBinding.ensureInitialized();
+  await DbHelper.instance.db;
   runApp(const Cuisine());
 }
 

@@ -5,6 +5,7 @@ import 'package:good_meal/models/ButtonObject.dart';
 import 'package:good_meal/models/Event.dart';
 import 'package:good_meal/pages/HomePage.dart';
 import 'package:good_meal/pages/NextPage.dart';
+import 'package:good_meal/pages/RecettePage.dart';
 import 'package:good_meal/widgets/UrlButton.dart';
 import '../pages/GibliPage.dart';
 import '../widgets/HoverButton.dart';
@@ -32,8 +33,8 @@ String p12 = "images/p12.jpg";
 // gestion des boutons des menus
 List<ButtonObject> menuButton = [
   ButtonObject(destination: HomePage(), label: "Ma cuisine"),
-  ButtonObject(destination: NextPage(), label: "Mes recettes"),
-  ButtonObject(destination: HomePage(), label: "Blog"),
+  ButtonObject(destination: RecettePage(), label: "Mes recettes"),
+  ButtonObject(destination: NextPage(), label: "Blog"),
   ButtonObject(destination: GibliPage(), label: "Gibli"),
 ];
 
